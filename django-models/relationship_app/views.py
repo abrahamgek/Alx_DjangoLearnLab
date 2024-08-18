@@ -13,8 +13,32 @@ from django.contrib.auth.forms import logout
 from django.contrib.auth.forms import UserCreationForm 
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.views import LoginView, LogoutView
+from django.views.generic import TemplateView
 
 # Function-based view to list all books
+
+# relationship_app/views.py
+
+# Define custom login view if needed
+class CustomLoginView(LoginView):
+    template_name = 'relationship_app/login.html'
+
+# Define custom logout view if needed
+class CustomLogoutView(LogoutView):
+    template_name = 'relationship_app/logout.html'
+
+# Define custom registration view
+def user_register(request):
+    if request.method == 'POST':
+        form = UserCreationForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('login')
+    else:
+        form = UserCreationForm()
+    return render(request, 'relationship_app/register.html', {'form': form})
+
 
 def list_books(request):
     books = Book.objects.all()
