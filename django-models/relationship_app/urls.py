@@ -1,3 +1,4 @@
+# relationship_app/urls.py
 from django.urls import path
 from .views import CustomLoginView, CustomLogoutView, user_register, list_books, LibraryDetailView
 
