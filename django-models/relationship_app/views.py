@@ -21,15 +21,15 @@ from django.views.generic import TemplateView
 # relationship_app/views.py
 
 # Define custom login view if needed
-class CustomLoginView(LoginView):
+class LoginView(LoginView):
     template_name = 'relationship_app/login.html'
 
 # Define custom logout view if needed
-class CustomLogoutView(LogoutView):
+class LogoutView(LogoutView):
     template_name = 'relationship_app/logout.html'
 
 # Define custom registration view
-def user_register(request):
+def views_register(request):
     if request.method == 'POST':
         form = UserCreationForm(request.POST)
         if form.is_valid():
@@ -65,7 +65,7 @@ def user_logout(request):
     logout(request)
     return render(request, 'relationship_app/logout.html')
 
-def user_register(request):
+def views_register(request):
     if request.method == 'POST':
         form = UserCreationForm(request.POST)
         if form.is_valid():
