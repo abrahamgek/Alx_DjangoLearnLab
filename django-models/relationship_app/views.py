@@ -5,7 +5,8 @@ from django.shortcuts import render, redirect
 from django.contrib.auth import login, logout, authenticate
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth.views import LoginView, LogoutView
-from .models import Book, Library
+from .models import Book
+from .models import Library
 
 # relationship_app/views.py
 
