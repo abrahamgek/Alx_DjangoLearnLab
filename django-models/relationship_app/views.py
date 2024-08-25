@@ -10,11 +10,10 @@ from .models import Library
 
 # relationship_app/views.py
 
-# Rename to avoid confusion
-class LoginView(LoginView):
+class CustomLoginView(LoginView):
     template_name = 'relationship_app/login.html'
 
-class LogoutView(LogoutView):
+class CustomLogoutView(LogoutView):
     template_name = 'relationship_app/logout.html'
 
 # Function-based view to handle registration

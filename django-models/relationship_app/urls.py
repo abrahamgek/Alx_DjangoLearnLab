@@ -1,6 +1,7 @@
 # relationship_app/urls.py
 from django.urls import path
-from .views import LoginView, LogoutView, user_register, LibraryDetailView
+from .views import LoginView, LogoutView, LibraryDetailView
+from .views import user_register
 from .views import list_books
 urlpatterns = [
     path('books/', list_books, name='list_books'),
