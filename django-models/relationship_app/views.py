@@ -1,5 +1,4 @@
 # relationship_app/views.py
-# relationship_app/views.py
 from django.views.generic.detail import DetailView
 from django.shortcuts import render, redirect
 from django.contrib.auth import login, logout, authenticate
