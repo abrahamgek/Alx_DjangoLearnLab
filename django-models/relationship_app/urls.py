@@ -3,7 +3,9 @@ from django.urls import path
 from .views import LoginView, LogoutView, LibraryDetailView, register
 from .views import register
 from .views import list_books
-from .views import admin_view, librarian_view, member_view
+from .views import admin_view
+from .views import librarian_view
+from .views import member_view
 urlpatterns = [
     path('books/', list_books, name='list_books'),
     path('library/<int:pk>/', LibraryDetailView.as_view(template_name = 'relationship_app/library_detail.html'), name='library_detail'),
