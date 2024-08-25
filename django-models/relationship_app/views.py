@@ -17,7 +17,7 @@ class CustomLogoutView(LogoutView):
     template_name = 'relationship_app/logout.html'
 
 # Function-based view to handle registration
-def views_register(request):
+def user_register(request):
     if request.method == 'POST':
         form = UserCreationForm(request.POST)
         if form.is_valid():
